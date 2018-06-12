@@ -1,5 +1,20 @@
 <template>
   <div>
-    这里是课程列表首页
+    <button @click="enterClass">进入课堂</button>
   </div>
 </template>
+<script>
+export default {
+  data() {
+    return {
+
+    }
+  },
+  methods: {
+    enterClass() {
+      this.$router.push('/detail/home')
+    }
+  }
+}
+</script>
+
