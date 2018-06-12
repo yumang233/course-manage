@@ -1,0 +1,400 @@
+html,
+body {
+  font: normal 14px/24px "microsoft yahei", "å¾®è½¯é›…é»‘", Arial;
+  color: #555555;
+  height: 100%;
+  background: #f4f4f5;
+}
+
+/* container CSS
+-------------------------------------------------- */
+
+#app {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  position: relative;
+  padding-bottom: 60px;
+  /*底部高度*/
+}
+
+/* main CSS
+-------------------------------------------------- */
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  background: #fff;
+  color: #888888;
+  text-align: center;
+  box-shadow: 0px -1px 10px rgba(66, 102, 178, 0.1);
+}
+
+.footer a {
+  color: #888888;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.main {
+  padding-top: 80px;
+  padding-bottom: 40px;
+  background: #f4f4f5;
+}
+
+/* header CSS
+-------------------------------------------------- */
+
+.header {
+  width: 100%;
+  height: 80px;
+  padding: 0 50px;
+  box-shadow: 0px 1px 14px rgba(66, 102, 178, 0.2);
+  position: fixed;
+  background: #fff;
+  z-index: 99999;
+  box-sizing: border-box;
+}
+
+.header .header-logo {
+  float: left;
+  margin-top: 7px;
+}
+
+.header .header-info {
+  float: right;
+  margin-top: 15px;
+  height: 50px;
+}
+
+.header .header-info>li {
+  float: left;
+  margin-left: 25px;
+  line-height: 50px;
+}
+
+.header .header-info>li>a {
+  display: block;
+  font-size: 24px;
+  color: #4367b2;
+}
+
+.header .header-info .headerInfo-user {
+  padding-bottom: 15px;
+}
+
+.header .header-info .headerInfo-user img {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  margin-right: 10px;
+  box-shadow: 0px 1px 6px rgba(24, 61, 139, 0.35);
+}
+
+.header .header-info .headerInfo-user:hover .headerInfo-list {
+  display: block;
+}
+
+.header .header-info .headerInfo-list {
+  position: absolute;
+  right: 0;
+  top: 80px;
+  padding: 16px 0;
+  width: 180px;
+  background: #fff;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
+  display: none;
+}
+
+.header .header-info .headerInfo-list>a {
+  display: block;
+  width: 100%;
+  line-height: 32px;
+  color: #333;
+  font-size: 15px;
+  padding: 0px 24px;
+}
+
+.header .header-info .headerInfo-list>a>span {
+  margin-left: 15px;
+}
+
+.header .header-info .headerInfo-list>a:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+/* main CSS
+-------------------------------------------------- */
+
+.main {
+  padding-top: 80px;
+  padding-bottom: 40px;
+  background: #f4f4f5;
+}
+
+.main .c-teacher {
+  width: 100%;
+  height: 180px; 
+  background: url(../../assets/teacherInfo_bg.jpg) no-repeat;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+ 
+}
+
+.c-teacher .teacher-bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 180px;
+  background: rgba(15, 15, 15, 0.3);
+}
+
+.c-teacher .teacher-wrap {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 180px;
+  z-index: 2;
+  padding: 0 50px;
+  box-sizing: border-box;
+}
+
+.c-teacher .teacher-info {
+  margin-top: 25px;
+}
+
+.c-teacher .teacher-info .teacher-pic {
+  float: left;
+}
+
+.c-teacher .teacher-info .teacher-pic img {
+  width: 120px;
+  height: 120px;
+  border-radius: 100%;
+  box-shadow: 0px 1px 6px rgba(24, 61, 139, 0.35);
+}
+
+.c-teacher .teacher-info .teacher-data {
+  float: left;
+  margin-left: 20px;
+}
+
+.c-teacher .teacher-info .teacher-data>h5 {
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  margin-top: 10px;
+}
+
+.c-teacher .teacher-info .teacher-data>p {
+  color: #eee;
+  font-size: 14px;
+  margin: 5px 0 15px 0;
+}
+
+.c-teacher .teacher-info .teacher-data>.teacher-sum li {
+  float: left;
+  margin-right: 30px;
+  text-align: center;
+}
+
+.c-teacher .teacher-info .teacher-data>.teacher-sum li>h4 {
+  font-size: 24px;
+  color: #ffffff;
+  font-weight: normal;
+}
+
+.c-teacher .teacher-info .teacher-data>.teacher-sum li>p {
+  color: #eeeeee;
+}
+
+.teacher-btn {
+  margin-top: 35px;
+}
+
+.teacher-btn>a {
+  display: block;
+  margin-top: 10px;
+  width: 120px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.6);
+  color: #4266b2;
+  font-size: 14px;
+}
+
+.teacher-btn>a:hover {
+  background: rgba(255, 255, 255, 1);
+}
+
+/* course CSS
+-------------------------------------------------- */
+
+.c-course .course-list {}
+
+.c-course .course-list .course-set {
+  float: left;
+  width: 375px;
+  height: 500px;
+  border-radius: 5px;
+  background: #fff;
+  box-shadow: 0px 1px 20px rgba(66, 102, 178, 0.1);
+  margin: 40px 40px 0 0;
+}
+
+.c-course .course-list .course-set>div {
+  padding: 20px;
+}
+
+.c-course .course-list .course-set>div>a {
+  display: block;
+  border: 1px dashed #cccccc;
+  width: 100%;
+  height: 460px;
+  text-align: center;
+}
+
+.c-course .course-list .course-set>div>a img {
+  margin-top: 140px;
+}
+
+.c-course .course-list .course-set>div>a p {
+  margin-top: 10px;
+  color: #777777;
+  font-size: 18px;
+}
+
+/*拖拽排序*/
+
+.course-list {
+  width: 1660px;
+  margin: 0 auto;
+}
+
+@media(max-width: 1860px) {
+  .course-list {
+    width: 1245px;
+  }
+}
+
+@media(max-width: 1400px) {
+  .course-list {
+    width: 830px;
+  }
+}
+
+.item_content ul li {
+  float: left;
+  width: 375px;
+  height: 500px;
+  margin: 40px 40px 0 0;
+  border-radius: 5px;
+  border: 1px dashed #ccc;
+  box-sizing: border-box;
+}
+
+.course-item {
+  float: left;
+  width: 375px;
+  height: 500px;
+  border-radius: 5px;
+  background: #fff;
+  box-shadow: 0px 1px 20px rgba(66, 102, 178, 0.1);
+}
+
+.course-item .course-img {
+  width: 100%;
+  height: 200px;
+  position: relative;
+  img{
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.course-item .course-img .course-sort {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  line-height: 60px;
+  background: #fff;
+  border-radius: 0 5px;
+  font-size: 26px;
+  color: #4266b2;
+  display: none;
+}
+
+.course-item .course-img:hover .course-sort {
+  display: block;
+}
+
+.course-item .course-text {
+  padding: 0 20px;
+}
+
+.course-item .course-text>h3 {
+  text-indent: 10px;
+  color: #252525;
+  font-size: 18px;
+  font-weight: bold;
+  width: 100%;
+  height: 48px;
+  line-height: 48px;
+  border-bottom: 1px solid #e4e4e4;
+}
+
+.course-item .course-text .courseText-left {
+  float: left;
+  width: 180px;
+  margin: 10px 10px 0 10px;
+}
+
+.course-item .course-text .courseText-left>p {
+  line-height: 28px;
+  color: #666666;
+}
+
+.course-item .course-text .courseText-right {
+  float: left;
+  width: 115px;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.course-item .course-text .courseText-right>img {
+  width: 115px;
+  height: 115px;
+  border: 1px solid #ececed;
+}
+
+.course-item .course-btn>a {
+  display: inline-block;
+  width: 150px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  background: #4266b2;
+  border: 1px solid #4266b2;
+  color: #fff;
+  margin-top: 20px;
+  border-radius: 3px;
+}
+
+.course-item .course-btn>a:nth-child(2) {
+  background: #fff;
+  color: #4266b2;
+  margin-left: 15px;
+}

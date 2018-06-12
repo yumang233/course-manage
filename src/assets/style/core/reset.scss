@@ -1,15 +1,140 @@
+body,
+ol,
+ul,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+th,
+td,
+dl,
+dd,
+form,
+fieldset,
+legend,
+input,
+button,
+textarea,
+select,
+img,
+table,
+div {
+  margin: 0;
+  padding: 0;
+}
 
-  blockquote,body,button,dd,dl,dt,fieldset,form,h1,h2,h3,h4,h5,h6,hr,input,legend,li,ol,p,pre,td,textarea,th,ul{margin:0;padding:0}
-  h1,h2,h3,h4,h5,h6{font-weight:normal}
-  address,cite,dfn,em,var{font-style:normal}
-  code,kbd,pre,samp{font-family:courier new,courier,monospace}
-  small{font-size:12px}
-  ol,ul{list-style:none}
-  a{text-decoration:none}
-  a:hover{text-decoration:none}
-  sup{vertical-align:text-top}
-  sub{vertical-align:text-bottom}
-  legend{color:#000}
-  fieldset,img{border:0}
-  button,input,select,textarea{font-size:100%}
-  table{border-collapse:collapse;border-spacing:0}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+fieldset,
+img {
+  border: 0;
+}
+
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+strong,
+th,
+var {
+  font-weight: normal;
+  font-style: normal;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+textarea {
+  resize: none;
+}
+
+img {
+  border: none;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+input,
+area {
+  outline: none;
+}
+
+i {
+  font-style: normal;
+}
+
+b {
+  font-weight: normal;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Microsoft YaHei", "微软雅黑", Arial;
+}
+
+a,
+a:focus,
+a:hover {
+  text-decoration: none;
+}
+
+.w1200 {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.clearfix:after,
+.clearfix:before {
+  content: "";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.clearfix {
+  zoom: 1;
+}
+
+.cl {
+  clear: both;
+}
+
+.pull-left {
+  float: left;
+}
+
+.pull-right {
+  float: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.img-responsive {
+  width: 100%;
+  height: auto;
+}
