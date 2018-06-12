@@ -75,7 +75,7 @@
         <div class="c-course clearfix">
             <div class="content">
                 <div class="course-list">
-                    <div class="course-set">
+                    <div class="course-set" @click="addCourse">
                         <div><a href="javascript:;">
                             <img src="../../assets/icon-add.png" />
                             <p>创建课堂</p>
@@ -170,6 +170,21 @@ export default {
   methods: {
     enterClass() {
       this.$router.push('/detail/home')
+    },
+    addCourse() {
+      let index = this.courseList.length
+      index++
+      this.courseList.push({
+        id: index,
+        courseTit: '卡牌大师教学',
+        start: '2018-6-17',
+        count: '36',
+        class: 2,
+        student: 200,
+        adress: '咸宁蛤蟆家',
+        number: '编号N2132',
+        courseImgUrl: 'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1822063051,4161046849&fm=27&gp=0.jpg',
+      })
     }
   },
   components: {
