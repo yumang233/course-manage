@@ -82,9 +82,9 @@
                         </a></div>
                     </div>
                     <div class="item_content">
-                        <ul>
-                            <draggable v-model="courseList" :options="{draggable:'.liItem'}" @start="drag=true" @end="drag=false">
-                            <li v-for="course in courseList" :key="course.id" class="liItem">
+                        <ul class="clearfix liItem-wrapper">
+                            <!-- <draggable v-model="courseList" :options="{draggable:'.liItem'}" @start="drag=true" @end="drag=false"> -->
+                            <li v-for="(course,index) in courseList" :class="{'fixed':course.down}" :key="course.id" class="liItem" @mousedown="down(course,index,$event)" @mouseup="up(course,index)">
                                 <div class="course-item item">
                                     <div class="course-img">
                                         <img :src="course.courseImgUrl" alt="" />
@@ -106,13 +106,13 @@
                                             </div>
                                         </div>
                                         <div class="course-btn">
-                                            <a href="javascript:;">进入课堂</a>
+                                            <a href="javascript:;" @click="enterClass(course)">进入课堂</a>
                                             <a href="javascript:;">复制课程</a>
                                         </div>
                                     </div>
                                 </div>
                             </li>
-                            </draggable>
+                            <!-- </draggable> -->
                         </ul>
                     </div>
                 </div>
@@ -141,6 +141,7 @@ export default {
           adress: '咸宁蛤蟆家',
           number: '编号N2132',
           courseImgUrl: 'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1822063051,4161046849&fm=27&gp=0.jpg',
+          down: false
         },
         {
           id: 2,
@@ -152,6 +153,7 @@ export default {
           adress: '咸宁蛤蟆家',
           number: '编号N2132',
           courseImgUrl: 'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1822063051,4161046849&fm=27&gp=0.jpg',
+          down: false
         },
         {
           id: 3,
@@ -163,13 +165,24 @@ export default {
           adress: '咸宁蛤蟆家',
           number: '编号N2132',
           courseImgUrl: 'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1822063051,4161046849&fm=27&gp=0.jpg',
+          down: false
         }
       ]
     }
   },
   methods: {
-    enterClass() {
-      this.$router.push('/detail/home')
+    enterClass(course) {
+      this.$router.push({
+        path: '/detail',
+        params: {
+          dataObj: course.id
+        }
+        /*query: {
+            name: 'name', 
+            dataObj: this.msg
+        }*/
+      })
+      document.documentElement.scrollTop = 0
     },
     addCourse() {
       let index = this.courseList.length
@@ -185,11 +198,41 @@ export default {
         number: '编号N2132',
         courseImgUrl: 'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1822063051,4161046849&fm=27&gp=0.jpg',
       })
+    },
+    down(item, index, e) {
+      var _parent = findParentByClass(e.target, 'liItem');
+      console.log(_parent.getBoundingClientRect().top)
+      console.log(_parent.getBoundingClientRect().left)
+
+      _parent.style.left = e.pageX;
+      _parent.style.top = e.pageY;
+
+      // item.down = true
+
+    },
+    up(item, index) {
+      console.log(item, index)
     }
+  },
+  mounted() {
+    // let _ulWrapper = document.querySelector('.liItem-wrapper');
+    // _ulWrapper.addEventListener('mousedown', function (e) {
+    //   if (e.target.nodeName == 'LI') {
+    //     console.log(111)
+    //   }
+    // })
   },
   components: {
     draggable
   }
+}
+function findParentByClass(node, sclass) {
+  var _parent = node.parentNode;
+  if (_parent.className.indexOf(sclass) != -1) {
+    return _parent;
+  }
+  return findParentByClass(_parent, sclass)
+
 }
 </script>
 
