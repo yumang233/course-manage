@@ -69,10 +69,13 @@
   position: relative;
   float: left;
 }
-.router-link-active{
-  color: #3A5DA8;
+.router-link-active {
+  color: #3a5da8;
   border-bottom: 3px solid #4266b2;
   // padding: 28px 0 25px 0;
+}
+.main-content{
+  padding-top: 80px;
 }
 </style>
 
@@ -131,6 +134,9 @@
 								</div>
 							</div>
 				</div>
-    <router-view></router-view>
+    <div class="main-content">
+       <router-view></router-view>
+
+    </div>
   </div>
 </template>

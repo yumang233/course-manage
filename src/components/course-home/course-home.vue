@@ -75,16 +75,19 @@
         <div class="c-course clearfix">
             <div class="content">
                 <div class="course-list">
-                    <div class="course-set" @click="addCourse">
-                        <div><a href="javascript:;">
-                            <img src="../../assets/icon-add.png" />
-                            <p>创建课堂</p>
-                        </a></div>
-                    </div>
+                    
                     <div class="item_content">
                         <ul class="clearfix liItem-wrapper">
+                          <li class="course-set" @click="addCourse">
+                              <div>
+                                  <a href="javascript:;">
+                                    <img src="../../assets/icon-add.png" />
+                                    <p>创建课堂</p>
+                                  </a>
+                              </div>
+                            </li>
                             <!-- <draggable v-model="courseList" :options="{draggable:'.liItem'}" @start="drag=true" @end="drag=false"> -->
-                            <li v-for="(course,index) in courseList" :class="{'fixed':course.down}" :key="course.id" class="liItem" @mousedown="down(course,index,$event)" @mouseup="up(course,index)">
+                            <li v-for="(course,index) in courseList" :class="{'fixed':course.down}" :key="course.id" class="liItem" @mousedown="down(course,index,$event)" @mousemove="move(course,index,$event)" @mouseup="up(course,index)">
                                 <div class="course-item item">
                                     <div class="course-img">
                                         <img :src="course.courseImgUrl" alt="" />
@@ -167,7 +170,8 @@ export default {
           courseImgUrl: 'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1822063051,4161046849&fm=27&gp=0.jpg',
           down: false
         }
-      ]
+      ],
+      isDown: false
     }
   },
   methods: {
@@ -201,16 +205,23 @@ export default {
     },
     down(item, index, e) {
       var _parent = findParentByClass(e.target, 'liItem');
-      console.log(_parent.getBoundingClientRect().top)
-      console.log(_parent.getBoundingClientRect().left)
+      this.isDown = true
+      // document.addEventListener('mousemove', (e) => {
+      //   if (this.isDown) {
+      //     _parent.style.position = 'absolute'
+      //     _parent.style.left = e.pageX;
+      //     console.log(_parent.style.left)
+      //     _parent.style.top = e.pageY;
+      //   }
 
-      _parent.style.left = e.pageX;
-      _parent.style.top = e.pageY;
+      // })
 
-      // item.down = true
+    },
+    move(item, index, e) {
 
     },
     up(item, index) {
+      this.isDown = false
       console.log(item, index)
     }
   },
