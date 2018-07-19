@@ -206,15 +206,15 @@ export default {
     down(item, index, e) {
       var _parent = findParentByClass(e.target, 'liItem');
       this.isDown = true
-      // document.addEventListener('mousemove', (e) => {
-      //   if (this.isDown) {
-      //     _parent.style.position = 'absolute'
-      //     _parent.style.left = e.pageX;
-      //     console.log(_parent.style.left)
-      //     _parent.style.top = e.pageY;
-      //   }
+      document.addEventListener('mousemove', (e) => {
+        if (this.isDown) {
+          // _parent.style.position = 'absolute'
+          _parent.style.left = e.pageX + 'px';
+          console.log(_parent.style.left)
+          _parent.style.top = e.pageY + 'px';
+        }
 
-      // })
+      })
 
     },
     move(item, index, e) {
@@ -223,6 +223,7 @@ export default {
     up(item, index) {
       this.isDown = false
       console.log(item, index)
+      document.onmousemove = null;
     }
   },
   mounted() {
